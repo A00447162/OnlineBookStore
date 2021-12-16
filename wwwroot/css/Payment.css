@@ -1,0 +1,87 @@
+﻿.card__row {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+}
+
+.card__title {
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: black;
+    margin: 1rem 0 1.5rem;
+}
+
+.card__col {
+    padding-right: 2rem;
+}
+
+.card__input {
+    background: none;
+    border: black;
+    border-bottom: dashed 0.2rem rgba(255, 255, 255, 0.15);
+    font-size: 1.2rem;
+    color: black;
+}
+
+.card__input--large {
+    font-size: 2rem;
+}
+
+.card__input--medium {
+    font-size: 1.25rem;
+}
+
+.card__input::placeholder {
+    color: rgba(0,0,255,0.3);
+}
+
+.card__input:focus {
+    outline: none;
+    border-color: rgba(255,0,255,0.3);
+}
+
+.card__label {
+    display: block;
+    color: black;
+    font-weight: 400;
+}
+
+.card__brand {
+    font-size: 2rem;
+    color: black;
+    min-width: 100px;
+    min-height: 75px;
+    text-align: left;
+}
+
+.myDivClass {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.button-class {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.button1 {
+    background-color: #4CAF50;
+}
+/* Green */
+.button2 {
+    background-color: #008CBA;
+}
+/* Blue */
+.button3 {
+    background-color: #fceb01;
+    color: black;
+}
+/* Yellow */
