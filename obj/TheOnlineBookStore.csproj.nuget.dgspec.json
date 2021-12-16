@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vaidy\\source\\repos\\TheOnlineBookStore\\TheOnlineBookStore.csproj": {}
+    "C:\\Users\\vaidy\\Downloads\\OnlineBookStore\\TheOnlineBookStore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vaidy\\source\\repos\\TheOnlineBookStore\\TheOnlineBookStore.csproj": {
+    "C:\\Users\\vaidy\\Downloads\\OnlineBookStore\\TheOnlineBookStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vaidy\\source\\repos\\TheOnlineBookStore\\TheOnlineBookStore.csproj",
+        "projectUniqueName": "C:\\Users\\vaidy\\Downloads\\OnlineBookStore\\TheOnlineBookStore.csproj",
         "projectName": "TheOnlineBookStore",
-        "projectPath": "C:\\Users\\vaidy\\source\\repos\\TheOnlineBookStore\\TheOnlineBookStore.csproj",
+        "projectPath": "C:\\Users\\vaidy\\Downloads\\OnlineBookStore\\TheOnlineBookStore.csproj",
         "packagesPath": "C:\\Users\\vaidy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vaidy\\source\\repos\\TheOnlineBookStore\\obj\\",
+        "outputPath": "C:\\Users\\vaidy\\Downloads\\OnlineBookStore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -21,15 +21,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -40,28 +40,8 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.13, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.13, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[5.0.13, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[5.0.13, )"
-            }
-          },
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
