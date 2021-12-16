@@ -1,6 +1,11 @@
+using eTickets.Data.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -8,6 +13,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TheOnlineBookStore.Data;
+using TheOnlineBookStore.Data.Cart;
+using TheOnlineBookStore.Data.Services;
+using TheOnlineBookStore.Models;
 
 namespace TheOnlineBookStore
 {
@@ -23,6 +32,24 @@ namespace TheOnlineBookStore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
+
+            services.AddScoped<IAuthorsService, AuthorsService>();
+            services.AddScoped<IBooksService, BooksService>();
+            services.AddScoped<IOrdersService, OrdersService>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
+
+            //services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<DatabaseContext>();
+            //services.AddMemoryCache();
+            services.AddSession();
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            //});
+
             services.AddControllersWithViews();
         }
 
@@ -43,6 +70,10 @@ namespace TheOnlineBookStore
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseAuthorization();
 
@@ -52,6 +83,11 @@ namespace TheOnlineBookStore
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+
+            DatabaseInitializer.Seed(app);
+            //DatabaseInitializer.SeedUsersAndRolesAsync(app).Wait();
+
         }
     }
 }
