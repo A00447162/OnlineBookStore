@@ -34,6 +34,10 @@ namespace TheOnlineBookStore.Controllers
                 var filteredResult = allBooks.Where(n => n.Name.Contains(searchString) || n.About.Contains(searchString)).ToList();
                 return View("Index", filteredResult);
             }
+            else
+            {
+                return RedirectToAction(nameof(Index));
+            }
 
             return View(allBooks);
         }

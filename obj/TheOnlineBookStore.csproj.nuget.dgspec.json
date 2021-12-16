@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Final\\TheOnlineBookStore\\TheOnlineBookStore.csproj": {}
+    "C:\\Users\\vaidy\\Documents\\OnlineBookStore\\TheOnlineBookStore.csproj": {}
   },
   "projects": {
-    "E:\\Final\\TheOnlineBookStore\\TheOnlineBookStore.csproj": {
+    "C:\\Users\\vaidy\\Documents\\OnlineBookStore\\TheOnlineBookStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Final\\TheOnlineBookStore\\TheOnlineBookStore.csproj",
+        "projectUniqueName": "C:\\Users\\vaidy\\Documents\\OnlineBookStore\\TheOnlineBookStore.csproj",
         "projectName": "TheOnlineBookStore",
-        "projectPath": "E:\\Final\\TheOnlineBookStore\\TheOnlineBookStore.csproj",
-        "packagesPath": "C:\\Users\\Srikanth\\.nuget\\packages\\",
-        "outputPath": "E:\\Final\\TheOnlineBookStore\\obj\\",
+        "projectPath": "C:\\Users\\vaidy\\Documents\\OnlineBookStore\\TheOnlineBookStore.csproj",
+        "packagesPath": "C:\\Users\\vaidy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vaidy\\Documents\\OnlineBookStore\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Srikanth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vaidy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
