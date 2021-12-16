@@ -1,10 +1,10 @@
-﻿using eTickets.Data.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using TheOnlineBookStore.Data;
+using TheOnlineBookStore.Data.Base;
 
 namespace TheOnlineBookStore.Models
 {

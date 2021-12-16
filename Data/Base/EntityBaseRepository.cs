@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using TheOnlineBookStore.Data;
 
-namespace eTickets.Data.Base
+namespace TheOnlineBookStore.Data.Base
 {
     public class EntityBaseRepository<T> : IEntityBaseRepository<T> where T : class, IEntityBase, new()
     {

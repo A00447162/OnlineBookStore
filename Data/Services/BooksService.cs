@@ -1,9 +1,9 @@
-﻿using eTickets.Data.Base;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TheOnlineBookStore.Data.Base;
 using TheOnlineBookStore.Models;
 
 namespace TheOnlineBookStore.Data.Services
@@ -42,6 +42,11 @@ namespace TheOnlineBookStore.Data.Services
                 await _context.Authors_Books.AddAsync(newAuthorBook);
             }
             await _context.SaveChangesAsync();
+        }
+
+        public Task GeBookByIdAsync(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<Book> GetBookByIdAsync(int id)
@@ -98,9 +103,15 @@ namespace TheOnlineBookStore.Data.Services
             await _context.SaveChangesAsync();
         }
 
-        Task<NewBookDropdownsVM> IBooksService.GetNewBookDropdownsValues()
+       public async Task<NewBookDropdownsVM> GetNewBookDropdownsValues()
         {
-            throw new NotImplementedException();
+            var response = new NewBookDropdownsVM()
+            {
+                Authors = await _context.Authors.OrderBy(n => n.Name).ToListAsync(),
+                Publishers = await _context.Publishers.OrderBy(n => n.Name).ToListAsync()
+            };
+
+            return response;
         }
     }
 }
