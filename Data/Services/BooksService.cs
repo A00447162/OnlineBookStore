@@ -32,15 +32,23 @@ namespace TheOnlineBookStore.Data.Services
 
 
 
-            foreach (var authorId in data.AuthorIds)
-            {
-                var newAuthorBook = new AuthorsAndBooks()
-                {
-                    BookID = newBook.Id,
-                    AuthorID = authorId
-                };
-                await _context.Authors_Books.AddAsync(newAuthorBook);
-            }
+            //foreach (var authorId in data.AuthorIds)
+            //{
+            //    var newAuthorBook = new AuthorsAndBooks()
+            //    {
+            //        BookID = newBook.Id,
+            //        AuthorID = authorId
+            //    };
+            //    try
+            //    {
+            //        await _context.Authors_Books.AddAsync(newAuthorBook);
+            //    }
+            //    catch (Exception)
+            //    {
+
+            //        break;
+            //    }                
+            //}
             await _context.SaveChangesAsync();
         }
 
@@ -57,17 +65,6 @@ namespace TheOnlineBookStore.Data.Services
                 .FirstOrDefaultAsync(n => n.Id == id);
 
             return bookDetails;
-        }
-
-        public async Task<NewBookDropdownsVM> GetNewMovieDropdownsValues()
-        {
-            var response = new NewBookDropdownsVM()
-            {
-                Authors = await _context.Authors.OrderBy(n => n.Name).ToListAsync(),
-                Publishers = await _context.Publishers.OrderBy(n => n.Name).ToListAsync()
-            };
-
-            return response;
         }
 
         public async Task UpdateBookAsync(NewBookVM data)

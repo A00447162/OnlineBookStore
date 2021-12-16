@@ -49,26 +49,26 @@ namespace TheOnlineBookStore.Controllers
         //GET: Movies/Create
         public async Task<IActionResult> Create()
         {
-            var movieDropdownsData = await _service.GetNewBookDropdownsValues();
-            ViewBag.PublisherId = new SelectList(movieDropdownsData.Publishers, "Id", "Name");
-            ViewBag.AuthorsIds = new SelectList(movieDropdownsData.Authors, "Id", "Name");
+            var bookDropdownsData = await _service.GetNewBookDropdownsValues();
+            ViewBag.Publishers = new SelectList(bookDropdownsData.Publishers, "Id", "Name");
+            ViewBag.Authors = new SelectList(bookDropdownsData.Authors, "Id", "Name");
 
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(NewBookVM movie)
+        public async Task<IActionResult> Create(NewBookVM book)
         {
             if (!ModelState.IsValid)
             {
-                var movieDropdownsData = await _service.GetNewBookDropdownsValues();
-                ViewBag.PublisherId = new SelectList(movieDropdownsData.Publishers, "Id", "Name");
-                ViewBag.AuthorsIds = new SelectList(movieDropdownsData.Authors, "Id", "Name");
+                var bookDropdownsData = await _service.GetNewBookDropdownsValues();
+                ViewBag.Publishers = new SelectList(bookDropdownsData.Publishers, "Id", "Name");
+                ViewBag.Authors = new SelectList(bookDropdownsData.Authors, "Id", "Name");
 
-                return View(movie);
+                return View(book);
             }
 
-            await _service.AddNewBookAsync(movie);
+            await _service.AddNewBookAsync(book);
             return RedirectToAction(nameof(Index));
         }
 

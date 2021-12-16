@@ -30,8 +30,8 @@ namespace TheOnlineBookStore.Models
         public BookGenre BookGenre { get; set; }
 
         //Relationships
-        [Display(Name = "Select authors(s)")]
-        [Required(ErrorMessage = "Movie auhors(s) is required")]
+        [Display(Name = "Select author")]
+        [Required(ErrorMessage = "Book author is required")]
         public List<int> AuthorIds { get; set; }
         
         [Display(Name = "Select a publisher")]

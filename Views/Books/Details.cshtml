@@ -31,7 +31,7 @@
                         </p>
                         <p class="card-text"><b>Genre: </b>@Model.Genre</p>
                         <p class="card-text">
-                            <b>Actors: </b>
+                            <b>Authors: </b>
                             <hr />
                             <div class="row">
                                 @foreach (var author in Model.Authors)
@@ -39,7 +39,7 @@
                                     <div class="column text-center">
                                         <img class="border-info rounded-circle" src="@author.Author.PictureURL" style="max-width: 150px" />
                                         <br />
-                                        <a asp-controller="Actors" asp-action="Details" asp-route-id="@author.AuthorID">@author.Author.Name</a>
+                                        <a asp-controller="Authors" asp-action="Details" asp-route-id="@author.AuthorID">@author.Author.Name</a>
                                     </div>
                                 }
                             </div>
