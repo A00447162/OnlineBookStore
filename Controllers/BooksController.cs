@@ -38,8 +38,6 @@ namespace TheOnlineBookStore.Controllers
             {
                 return RedirectToAction(nameof(Index));
             }
-
-            return View(allBooks);
         }
 
         public async Task<IActionResult> Details(int id)
