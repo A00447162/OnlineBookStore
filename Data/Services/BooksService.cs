@@ -30,7 +30,8 @@ namespace TheOnlineBookStore.Data.Services
             await _context.Books.AddAsync(newBook);
             await _context.SaveChangesAsync();
 
-            //Add Movie Actors
+
+
             foreach (var authorId in data.AuthorIds)
             {
                 var newAuthorBook = new AuthorsAndBooks()
@@ -51,16 +52,6 @@ namespace TheOnlineBookStore.Data.Services
                 .FirstOrDefaultAsync(n => n.Id == id);
 
             return bookDetails;
-        }
-
-        public async Task<Book> GetMovieByIdAsync(int id)
-        {
-            var movieDetails = await _context.Books
-                .Include(p => p.Publisher)
-                .Include(am => am.Authors).ThenInclude(a => a.Author)
-                .FirstOrDefaultAsync(n => n.Id == id);
-
-            return movieDetails;
         }
 
         public async Task<NewBookDropdownsVM> GetNewMovieDropdownsValues()

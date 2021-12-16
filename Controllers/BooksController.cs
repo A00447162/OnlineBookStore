@@ -22,5 +22,17 @@ namespace TheOnlineBookStore.Controllers
             var AllBooks = await _service.GetAllAsync();
             return View(AllBooks);
         }
+        public async Task<IActionResult> Details(int id)
+        {
+            var bookDetail = await _service.GetBookByIdAsync(id);
+            return View(bookDetail);
+        }
+        public IActionResult Create()
+        {
+            ViewData["Welcome"] = "Welcome to our store";
+            ViewBag.Description = "This is the store description";
+
+            return View();
+        }
     }
 }
