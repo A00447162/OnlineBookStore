@@ -50,8 +50,8 @@ namespace TheOnlineBookStore.Controllers
         public async Task<IActionResult> Create()
         {
             var movieDropdownsData = await _service.GetNewBookDropdownsValues();
-            ViewBag.Publishers = new SelectList(movieDropdownsData.Publishers, "Id", "Name");
-            ViewBag.Authors = new SelectList(movieDropdownsData.Authors, "Id", "Name");
+            ViewBag.PublisherId = new SelectList(movieDropdownsData.Publishers, "Id", "Name");
+            ViewBag.AuthorsIds = new SelectList(movieDropdownsData.Authors, "Id", "Name");
 
             return View();
         }
@@ -62,8 +62,8 @@ namespace TheOnlineBookStore.Controllers
             if (!ModelState.IsValid)
             {
                 var movieDropdownsData = await _service.GetNewBookDropdownsValues();
-                ViewBag.Publishers = new SelectList(movieDropdownsData.Publishers, "Id", "Name");
-                ViewBag.Authors = new SelectList(movieDropdownsData.Authors, "Id", "Name");
+                ViewBag.PublisherId = new SelectList(movieDropdownsData.Publishers, "Id", "Name");
+                ViewBag.AuthorsIds = new SelectList(movieDropdownsData.Authors, "Id", "Name");
 
                 return View(movie);
             }

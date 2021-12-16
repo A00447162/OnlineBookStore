@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using TheOnlineBookStore.Data.Base;
+using TheOnlineBookStore.Models;
+
+namespace TheOnlineBookStore.Data.Services
+{
+    public interface IPublishersService : IEntityBaseRepository<Publisher>
+    {
+        //Task<IEnumerable<Author>> GetAll();
+        //Task<Author> GetByIdAsync(int id);
+        //Task AddAsync(Author author);
+        //Task<Author> UpdateAsync(int id, Author newActor);
+
+        //Task DeleteAsync(int id);
+    }
+    
+}

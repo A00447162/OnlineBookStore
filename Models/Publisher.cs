@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using TheOnlineBookStore.Data.Base;
 
 namespace TheOnlineBookStore.Models
 {
-    public class Publisher
+    public class Publisher:IEntityBase
     {
         [Key]
         public int Id { get; set; }

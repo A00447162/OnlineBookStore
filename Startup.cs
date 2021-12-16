@@ -36,6 +36,7 @@ namespace TheOnlineBookStore
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
 
             services.AddScoped<IAuthorsService, AuthorsService>();
+            services.AddScoped<IPublishersService, PublishersServices>();
             services.AddScoped<IBooksService, BooksService>();
             services.AddScoped<IOrdersService, OrdersService>();
 
