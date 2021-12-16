@@ -47,7 +47,7 @@ const cleaveCCV = new Cleave("#cardCcv", {
 
 function restrictNumbers(e) {
     var x = e.which || e.keycode;
-    if ((x >= 65 && x <= 90) || (x >= 97 && x <= 122))
+    if ((x >= 65 && x <= 90) || (x >= 97 && x <= 122) || (x==32))
         return true;
     else
         return false;
